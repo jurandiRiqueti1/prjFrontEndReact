@@ -3,12 +3,13 @@ import { Box, useMediaQuery } from "@mui/system";
 import { useDrawerContext } from "../contexts";
 
 interface ILayoutBaseDePaginaProps {
-    title: string;
+    titulo: string;
+    barraDeFerramentas: React.ReactNode | undefined;
 
     children: React.ReactNode;
 }
 
-export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ children, title }) => {
+export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ children, titulo, barraDeFerramentas }) => {
 
     const theme = useTheme();
 
@@ -19,20 +20,20 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ childre
     return(
         <Box height="100%" display="flex" flexDirection="column" gap={1}>
             <Box padding={1} display="flex" alignItems="center" height={theme.spacing(12)} gap={1}>
-                {smDown && <IconButton onClick={toggleDrawerOpen}>
+                {smDown && (<IconButton onClick={toggleDrawerOpen}>
                     <Icon>menu</Icon>
-                </IconButton>}
+                </IconButton>)}
 
                 <Typography variant="h5">
-                    {title}
+                    {titulo}
                 </Typography>
             </Box>
 
-            <Box>
-                Barra de ferramentas
-            </Box>
+            {barraDeFerramentas && (<Box>
+                {barraDeFerramentas}
+            </Box>)}
 
-            <Box>
+            <Box flex={1} overflow="auto">
                 {children}
             </Box>
         </Box>
