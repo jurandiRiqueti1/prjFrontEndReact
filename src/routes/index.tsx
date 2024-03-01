@@ -20,7 +20,7 @@ export const AppRoutes = () => {
             //     path: '/cidades',
             // }
         ]);
-    });
+    }, []);
 
     return(
         <Routes>
