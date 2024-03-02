@@ -1,4 +1,3 @@
-import { Button, Icon } from "@mui/material";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useDrawerContext } from "../shared/contexts";
 import { useEffect } from "react";
@@ -6,7 +5,7 @@ import { Dashboard } from "../pages";
 
 export const AppRoutes = () => {
 
-    const { toggleDrawerOpen, setDrawerOptions } = useDrawerContext();
+    const { setDrawerOptions } = useDrawerContext();
 
     useEffect(() => {
         setDrawerOptions([

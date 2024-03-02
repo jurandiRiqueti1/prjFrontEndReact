@@ -39,7 +39,7 @@ export const MenuLateral: React.FC<{ children: React.ReactNode }> = ({ children 
     const smDown =  useMediaQuery(theme.breakpoints.down("sm"));
 
     const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
-    const { toggleTheme } = useAppThemeContext();
+    const { themeName, toggleTheme } = useAppThemeContext();
 
     return(
         <>
@@ -72,7 +72,7 @@ export const MenuLateral: React.FC<{ children: React.ReactNode }> = ({ children 
                         <List component={"nav"}>
                             <ListItemButton onClick={toggleTheme}>
                                 <ListItemIcon>
-                                    <Icon>light_mode</Icon>
+                                    <Icon>{themeName === 'light' ? 'dark_mode' : 'light_mode'}</Icon>
                                 </ListItemIcon>
                                 <ListItemText primary="Mudar tema"/>
                             </ListItemButton>

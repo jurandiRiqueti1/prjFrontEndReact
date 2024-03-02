@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import { LightTheme, DarkTheme } from "../themes";
-import { Box, ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider, useMediaQuery } from "@mui/material";
 
 interface IThemeContextData {
     themeName: 'light' | 'dark';
@@ -19,7 +19,9 @@ export const useAppThemeContext = () => {
 
 export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children }) => {
 
-    const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+    const [themeName, setThemeName] = useState<'light' | 'dark'>(prefersDarkMode ? 'dark' : 'light');
 
     const toggleTheme = useCallback(() => {
         setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark' : 'light') 
