@@ -1,5 +1,5 @@
 import { Avatar, Box, Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from "@mui/material";
-import { useDrawerContext } from "../../contexts";
+import { useAppThemeContext, useDrawerContext } from "../../contexts";
 import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import { useCallback } from "react";
 
@@ -39,6 +39,7 @@ export const MenuLateral: React.FC<{ children: React.ReactNode }> = ({ children 
     const smDown =  useMediaQuery(theme.breakpoints.down("sm"));
 
     const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
+    const { toggleTheme } = useAppThemeContext();
 
     return(
         <>
@@ -64,6 +65,17 @@ export const MenuLateral: React.FC<{ children: React.ReactNode }> = ({ children 
                                     onClick={smDown ? toggleDrawerOpen : undefined}
                                 />
                             ))}
+                        </List>
+                    </Box>
+
+                    <Box>
+                        <List component={"nav"}>
+                            <ListItemButton onClick={toggleTheme}>
+                                <ListItemIcon>
+                                    <Icon>light_mode</Icon>
+                                </ListItemIcon>
+                                <ListItemText primary="Mudar tema"/>
+                            </ListItemButton>
                         </List>
                     </Box>
 
