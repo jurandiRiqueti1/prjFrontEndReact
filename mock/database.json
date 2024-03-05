@@ -1,7 +1,17 @@
 {
-    "pessoas": 
+    "pessoas": [
         {
             "id": 1,
-            "nomeCompleto": "Pessoa 1"
+            "nomeCompleto": "Pessoa 1",
+            "email": "pessoa1@gmail.com",
+            "cidadeId": "Joaçaba"
+        },
+        {
+            "id": 1,
+            "nomeCompleto": "Teste 1",
+            "email": "pessoa1@gmail.com",
+            "cidadeId": "Joaçaba"
         }
+    ]
+        
 }
