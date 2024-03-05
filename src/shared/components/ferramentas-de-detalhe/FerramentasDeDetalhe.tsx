@@ -97,7 +97,7 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
                     overflow="hidden"
                     color={"primary"}
                 >
-                    Salvar e voltar
+                    Salvar e fechar
                 </Typography>
             </Button>)}
             {(mostrarBotaoSalvarEFecharCarregando && !smDown && !mdDown) && (<Skeleton
