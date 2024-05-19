@@ -17,7 +17,7 @@ export const ListagemDePessoas: React.FC = () => {
             if (result instanceof Error){
                 alert(result.message);
             } else {
-                console.log(result.data);
+                console.log(result.data, result.totalCount);
             }
         })
     }, [busca]);

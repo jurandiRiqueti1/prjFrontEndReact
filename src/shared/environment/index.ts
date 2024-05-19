@@ -19,5 +19,6 @@ export const Environment = {
     /**
      * Url base para se comunicar com o servidor
      */
-    URL_BASE: 'http://localhost:3333',
+    //URL_BASE: 'http://localhost:3333',
+    URL_BASE: 'http://localhost:3000',
 }

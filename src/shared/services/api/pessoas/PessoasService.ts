@@ -24,10 +24,11 @@ const getAll = async (page = 1, filter = ''): Promise<TPessoasComTotalCount | Er
 
     try {
 
-        const urlRelativa = `/pessoas?_page=${page}&_per_page=${Environment.LIMITE_DE_LINHAS}&nomeCompleto_like=${filter}`;
+        //const urlRelativa = `/pessoas?_page=${page}&_per_page=${Environment.LIMITE_DE_LINHAS}&nomeCompleto_like=${filter}`;
+
+        const urlRelativa = `/pessoas?page=${page}&limit=${Environment.LIMITE_DE_LINHAS}&filter=${filter}`
 
         const { data, headers } = await Api.get(urlRelativa);
-
         if (data) {
             return {
                 data,
